@@ -27,7 +27,7 @@
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
                     <a href="index.html"><h1 class="title">Version Control with Git</h1></a>
-          <h2 class="subtitle">Rebasing a project</h2>
+          <h2 class="subtitle">Updating a forked project</h2>
           <p>The collaboration scenario we just went over is very neat, but it makes several assumptions that aren’t always true. The biggest assumption is that only one person is working on a project at any given time. What happens if the person you’re collaborating with makes significant changes of their own in the time while you’re working on it. Your code might still work, but how do you update your project to include both your and their changes, and then include this in the pull request you send to them later?</p>
 <p>This workflow is slightly more complicated, and involves “rebasing” your code on the latest version of their project. This is best explained with an example.</p>
 <p>Let’s pretend that your name is Angela and are collaborating on a project with someone named Ted. Ted is the owner of a repository, and you (Angela) have forked it and made a few really awesome changes in commits D, E, and F. Unfortunately, Ted has also made a few changes (commits A, B, and C), and you’re not sure whether or not they will work with your changes. So you want to update it so that your changes are actually on “top” of his updated version.</p>
@@ -39,7 +39,29 @@
 <pre><code>fork --- A --- B --- C (Ted)
                       \
                        D --- E --- F (Angela)</code></pre>
-<p>Let’s do this with our partner’s repository.</p>
+<p>The second scenario (what we want) is much nicer, as Angela is now in a position to send a pull request to Ted. We have the most up-to-date version of the code will <em>all</em> changes, so we can make sure they play nice with each other. Let’s try doing this for real with your partner’s repository.</p>
+<p>Let’s clone our forked copy of your partner’s planets repository from GitHub, and make a file called <code>jupiter.txt</code>. Add whatever you want to it, then commit it.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> clone https://github.com/yourName/planets-partnersName.git
+<span class="kw">cd</span> planets-partnersName
+<span class="kw">echo</span> <span class="st">&#39;jupiter is big&#39;</span> <span class="kw">&gt;</span> jupiter.txt
+<span class="kw">git</span> add .
+<span class="kw">git</span> commit -m <span class="st">&#39;added jupiter&#39;</span>
+<span class="co"># you can push it if you want to, but it doesn&#39;t matter for this example</span></code></pre></div>
+<p>Now let’s give our partner some changes they have to deal with. In your copy of <code>planets</code> (<code>planets-yourName</code>), make a file called <code>saturn.txt</code>, and add whatever you want to it. Commit that too, then push it to GitHub.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">cd</span> ../planets-yourName
+<span class="kw">echo</span> <span class="st">&#39;saturn is the prettiest planet&#39;</span> <span class="kw">&gt;</span> saturn.txt
+<span class="kw">git</span> add .
+<span class="kw">git</span> commit -m <span class="st">&#39;added saturn&#39;</span>
+<span class="kw">git</span> push origin master</code></pre></div>
+<p><code>cd</code> back to your fork of your partner’s project. So right now, this is the current situation:</p>
+<pre><code>fork --- added saturn (partner)
+   \
+    added jupiter (us)</code></pre>
+<p>What we want to do is this:</p>
+<pre><code>fork --- added saturn (partner)
+                \
+                 added jupiter (us)</code></pre>
+<p>We</p>
         </div>
       </div>
       </article>

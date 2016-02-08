@@ -27,4 +27,43 @@ fork --- A --- B --- C (Ted)
                        D --- E --- F (Angela)
 ```
 
-Let's do this with our partner's repository.
+The second scenario (what we want) is much nicer, as Angela is now in a position to send a pull request to Ted. We have the most up-to-date version of the code will *all* changes, so we can make sure they play nice with each other. Let's try doing this for real with your partner's repository.
+
+Let's clone our forked copy of your partner's planets repository from GitHub, and make a file called `jupiter.txt`. Add whatever you want to it, then commit it.
+
+```{.bash}
+git clone https://github.com/yourName/planets-partnersName.git
+cd planets-partnersName
+echo 'jupiter is big' > jupiter.txt
+git add .
+git commit -m 'added jupiter'
+# you can push it if you want to, but it doesn't matter for this example
+```
+
+Now let's give our partner some changes they have to deal with. In your copy of `planets` (`planets-yourName`), make a file called `saturn.txt`, and add whatever you want to it. Commit that too, then push it to GitHub.
+
+```{.bash}
+cd ../planets-yourName
+echo 'saturn is the prettiest planet' > saturn.txt
+git add .
+git commit -m 'added saturn'
+git push origin master
+```
+
+`cd` back to your fork of your partner's project. So right now, this is the current situation:
+
+```
+fork --- added saturn (partner)
+   \
+    added jupiter (us)
+```
+
+What we want to do is this:
+
+```
+fork --- added saturn (partner)
+                \
+                 added jupiter (us)
+```
+
+We 
