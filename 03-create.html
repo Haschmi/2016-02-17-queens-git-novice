@@ -48,7 +48,7 @@ $ <span class="kw">cd</span> planets</code></pre></div>
 <p>But if we add the <code>-a</code> flag to show everything, we can see that Git has created a hidden directory within <code>planets</code> called <code>.git</code>:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span> -a</code></pre></div>
 <pre class="output"><code>.   ..  .git</code></pre>
-<p>Git stores information about the project in this special sub-directory. If we ever delete it, we will lose the project’s history.</p>
+<p>Git stores information about the project in this special sub-directory. If we ever delete it, we will lose the project’s history. This is a useful thing to remember- if we mess up with <code>git init</code>, we can actually delete anything related to the repository and give ourselves a clean slate, simply by deleting the <code>.git</code> folder.</p>
 <p>We can check that everything is set up correctly by asking Git to tell us the status of our project:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status</code></pre></div>
 <pre class="output"><code># On branch master

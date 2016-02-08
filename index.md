@@ -33,6 +33,7 @@ If any of these things apply to you, you should be using version control. In par
 
 Version control is the lab notebook of the digital world: it's what professionals use to keep track of what they've done and to collaborate with other people. Every large software development project relies on it, and most programmers use it for their small jobs as well. And it isn't just for software: books (like this one), papers, small data sets, and anything that changes over time or needs to be shared can and should be stored in a version control system. It's a programming standard, and every project should be using it.
 
+
 > ## Prerequisites {.prereq}
 > In this lesson we use Git from the Unix Shell. Some previous experience with the shell is expected, *but isn't mandatory*.
 
