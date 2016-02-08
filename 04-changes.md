@@ -303,31 +303,6 @@ $ git status
 nothing to commit, working directory clean
 ~~~
 
-and look at the history of what we've done so far:
-
-~~~ {.bash}
-$ git log
-~~~
-~~~ {.output}
-commit 005937fbe2a98fb83f0ade869025dc2636b4dad5
-Author: Vlad Dracula <vlad@tran.sylvan.ia>
-Date:   Thu Aug 22 10:14:07 2013 -0400
-
-    Discuss concerns about Mars' climate for Mummy
-
-commit 34961b159c27df3b475cfe4415d94a6d1fcd064d
-Author: Vlad Dracula <vlad@tran.sylvan.ia>
-Date:   Thu Aug 22 10:07:21 2013 -0400
-
-    Add concerns about effects of Mars' moons on Wolfman
-
-commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
-Author: Vlad Dracula <vlad@tran.sylvan.ia>
-Date:   Thu Aug 22 09:51:46 2013 -0400
-
-    Start notes on Mars as a base
-~~~
-
 To recap, when we want to add changes to our repository,
 we first need to add the changed files to the staging area
 (`git add`) and then commit the staged changes to the
@@ -363,12 +338,8 @@ repository (`git commit`):
 >     $ git commit -m myfile.txt "my recent changes"
 >     ~~~
 
-> ## `bio` Repository {.challenge}
+> ## `Writing your own commits` {.challenge}
 >
-> Create a new Git repository on your computer called `bio`.
-> Write a three-line biography for yourself in a file called `me.txt`,
-> commit your changes,
-> then modify one line, add a fourth line, and display the differences
-> between its updated state and its original state.
+> Add an extra line to the mars.txt file, and commit it to the repository.
 
 [commit-messages]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
