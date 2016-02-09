@@ -72,7 +72,7 @@ Let's see if we can accomplish this. The first step is for us to retrieve the ba
 # add a new remote repository
 git remote add upstream https://github.com/partner/planets-partnersName.git
 # fetch the contents of that remote repository
-git fetch upstream
+git pull upstream master
 ```
 
 Now we will check to make sure we are on our master branch and rebase our project onto what we just downloaded.
@@ -146,24 +146,3 @@ fork --- added saturn (partner)
 > ## Updating your copy of an upstream repository {.challenge}
 >
 > What do you think is the appropriate command to update our copy of our partner's repository?
->
-> 1.
->
->     ~~~
->     $ git fetch upstream/master
->     ~~~
-> 2.
->
->     ~~~
->     $ git pull origin master
->     ~~~
-> 3.
->
->     ~~~
->     $ git pull upstream master
->     ~~~
-> 4.
->
->     ~~~
->     $ git fetch origin/master
->     ~~~

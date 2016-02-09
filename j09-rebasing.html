@@ -65,7 +65,7 @@
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># add a new remote repository</span>
 <span class="kw">git</span> remote add upstream https://github.com/partner/planets-partnersName.git
 <span class="co"># fetch the contents of that remote repository</span>
-<span class="kw">git</span> fetch upstream</code></pre></div>
+<span class="kw">git</span> pull upstream master</code></pre></div>
 <p>Now we will check to make sure we are on our master branch and rebase our project onto what we just downloaded.</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> checkout master <span class="co"># not strictly necessary</span>
 <span class="kw">git</span> rebase upstream/master
@@ -114,12 +114,6 @@ Date:   Tue Feb 9 09:08:42 2016 -0500
 </div>
 <div class="panel-body">
 <p>What do you think is the appropriate command to update our copy of our partner’s repository?</p>
-<ol style="list-style-type: decimal">
-<li><pre><code>$ git fetch upstream/master</code></pre></li>
-<li><pre><code>$ git pull origin master</code></pre></li>
-<li><pre><code>$ git pull upstream master</code></pre></li>
-<li><pre><code>$ git fetch origin/master</code></pre></li>
-</ol>
 </div>
 </section>
         </div>
