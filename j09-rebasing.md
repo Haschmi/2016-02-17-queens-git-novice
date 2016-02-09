@@ -80,4 +80,55 @@ Now we will check to make sure we are on our master branch and rebase our projec
 ```{.bash}
 git checkout master # not strictly necessary
 git rebase upstream/master
+# check our work
+ls
+```
+```{.output}
+mars.txt
+pluto.txt
+jupiter.txt
+saturn.txt
+```
+
+Success, our repository now has both sets of changes. Unfortunately, GitHub now thinks our project has diverged from the online repository if we run `git status`.
+
+```{.bash}
+git status
+```
+```{.output}
+On branch gh-pages
+Your branch and 'origin/gh-pages' have diverged,
+and have 9 and 8 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+```
+
+This is perhaps the one time we are going to ignore Git's advice. We will forcibly overwrite our remote with the new, rebased project.
+
+```{.bash}
+git push -f origin master
+```
+
+Congratulations, we have successfully updated our forked repository! If we run `git log`, we can now see that our changes have been put on "top" of our partners'.
+
+```{.bash}
+git log
+```
+```{.output}
+commit 9f5ae8031323377d6c5ea4b396f8097858a85c2b
+Author: Your name <your email>
+Date:   Mon Feb 8 09:30:58 2016 -0500
+
+    added jupiter
+
+commit bebb959cf3d84377bdcc0bd8a9cb6b3a4e5c2c93
+Author: Partner name <partner email>
+Date:   Mon Feb 8 09:10:58 2016 -0500
+
+    added saturn
+
+commit a1e517673a689bb5f03599f3667239a9e8d9f0d2
+Author: Your name <your email>
+Date:   Tue Feb 9 09:08:42 2016 -0500
+
+    this should be the pull request where you added in their changes
 ```

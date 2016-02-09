@@ -62,6 +62,7 @@ lost, overwritten, or duplicated. They are going to learn version control to sol
 6.  [Ignoring Things](06-ignore.html)
 7.  [Remotes in GitHub](07-github.html)
 8.  [Collaborating](j08-collab_through_forks.html)
+9.  [Updating forked repositories](j09-rebasing.html)
 
 ## Other Resources
 

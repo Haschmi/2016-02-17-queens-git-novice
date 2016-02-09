@@ -61,7 +61,47 @@
 <pre><code>fork --- added saturn (partner)
                 \
                  added jupiter (us)</code></pre>
-<p>We</p>
+<p>Let’s see if we can accomplish this. The first step is for us to retrieve the base (upstream) repository that we forked from.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># add a new remote repository</span>
+<span class="kw">git</span> remote add upstream https://github.com/partner/planets-partnersName.git
+<span class="co"># fetch the contents of that remote repository</span>
+<span class="kw">git</span> fetch upstream</code></pre></div>
+<p>Now we will check to make sure we are on our master branch and rebase our project onto what we just downloaded.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> checkout master <span class="co"># not strictly necessary</span>
+<span class="kw">git</span> rebase upstream/master
+<span class="co"># check our work</span>
+<span class="kw">ls</span></code></pre></div>
+<pre class="output"><code>mars.txt
+pluto.txt
+jupiter.txt
+saturn.txt</code></pre>
+<p>Success, our repository now has both sets of changes. Unfortunately, GitHub now thinks our project has diverged from the online repository if we run <code>git status</code>.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> status</code></pre></div>
+<pre class="output"><code>On branch gh-pages
+Your branch and &#39;origin/gh-pages&#39; have diverged,
+and have 9 and 8 different commits each, respectively.
+  (use &quot;git pull&quot; to merge the remote branch into yours)</code></pre>
+<p>This is perhaps the one time we are going to ignore Git’s advice. We will forcibly overwrite our remote with the new, rebased project.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> push -f origin master</code></pre></div>
+<p>Congratulations, we have successfully updated our forked repository! If we run <code>git log</code>, we can now see that our changes have been put on “top” of our partners’.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> log</code></pre></div>
+<pre class="output"><code>commit 9f5ae8031323377d6c5ea4b396f8097858a85c2b
+Author: Your name &lt;your email&gt;
+Date:   Mon Feb 8 09:30:58 2016 -0500
+
+    added jupiter
+
+commit bebb959cf3d84377bdcc0bd8a9cb6b3a4e5c2c93
+Author: Partner name &lt;partner email&gt;
+Date:   Mon Feb 8 09:10:58 2016 -0500
+
+    added saturn
+
+commit a1e517673a689bb5f03599f3667239a9e8d9f0d2
+Author: Your name &lt;your email&gt;
+Date:   Tue Feb 9 09:08:42 2016 -0500
+
+    this should be the pull request where you added in their changes</code></pre>
         </div>
       </div>
       </article>
