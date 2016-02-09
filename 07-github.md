@@ -29,7 +29,7 @@ we'll explore the pros and cons of this in the final section of this lesson.
 
 Let's start by sharing the changes we've made to our current project with the world.
 Log in to GitHub,
-then click on the icon in the top right corner to create a new repository called `planets`:
+then click on the icon in the top right corner to create a new repository called `planets-yourName`:
 
 ![Creating a Repository on GitHub (Step 1)](fig/github-create-repo-01.png)
 

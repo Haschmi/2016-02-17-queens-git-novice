@@ -5,7 +5,7 @@ subtitle: Tracking Changes
 minutes: 20
 ---
 > ## Learning Objectives {.objectives}
-> 
+>
 > *   Go through the modify-add-commit cycle for single and multiple files.
 > *   Explain where information is stored at each stage of Git commit workflow.
 
@@ -295,113 +295,12 @@ but not yet committed.
 
 ![The Git Staging Area](fig/git-staging-area.svg)
 
-Let's watch as our changes to a file move from our editor
-to the staging area
-and into long-term storage.
-First,
-we'll add another line to the file:
-
-~~~ {.bash}
-$ nano mars.txt
-$ cat mars.txt
-~~~
-~~~ {.output}
-Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
-But the Mummy will appreciate the lack of humidity
-~~~
-~~~ {.bash}
-$ git diff
-~~~
-~~~ {.output}
-diff --git a/mars.txt b/mars.txt
-index 315bf3a..b36abfd 100644
---- a/mars.txt
-+++ b/mars.txt
-@@ -1,2 +1,3 @@
- Cold and dry, but everything is my favorite color
- The two moons may be a problem for Wolfman
-+But the Mummy will appreciate the lack of humidity
-~~~
-
-So far, so good:
-we've added one line to the end of the file
-(shown with a `+` in the first column).
-Now let's put that change in the staging area
-and see what `git diff` reports:
-
-~~~ {.bash}
-$ git add mars.txt
-$ git diff
-~~~
-
-There is no output:
-as far as Git can tell,
-there's no difference between what it's been asked to save permanently
-and what's currently in the directory.
-However,
-if we do this:
-
-~~~ {.bash}
-$ git diff --staged
-~~~
-~~~ {.output}
-diff --git a/mars.txt b/mars.txt
-index 315bf3a..b36abfd 100644
---- a/mars.txt
-+++ b/mars.txt
-@@ -1,2 +1,3 @@
- Cold and dry, but everything is my favorite color
- The two moons may be a problem for Wolfman
-+But the Mummy will appreciate the lack of humidity
-~~~
-
-it shows us the difference between
-the last committed change
-and what's in the staging area.
-Let's save our changes:
-
-~~~ {.bash}
-$ git commit -m "Discuss concerns about Mars' climate for Mummy"
-~~~
-~~~ {.output}
-[master 005937f] Discuss concerns about Mars' climate for Mummy
- 1 file changed, 1 insertion(+)
-~~~
-
-check our status:
-
 ~~~ {.bash}
 $ git status
 ~~~
 ~~~ {.output}
 # On branch master
 nothing to commit, working directory clean
-~~~
-
-and look at the history of what we've done so far:
-
-~~~ {.bash}
-$ git log
-~~~
-~~~ {.output}
-commit 005937fbe2a98fb83f0ade869025dc2636b4dad5
-Author: Vlad Dracula <vlad@tran.sylvan.ia>
-Date:   Thu Aug 22 10:14:07 2013 -0400
-
-    Discuss concerns about Mars' climate for Mummy
-
-commit 34961b159c27df3b475cfe4415d94a6d1fcd064d
-Author: Vlad Dracula <vlad@tran.sylvan.ia>
-Date:   Thu Aug 22 10:07:21 2013 -0400
-
-    Add concerns about effects of Mars' moons on Wolfman
-
-commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
-Author: Vlad Dracula <vlad@tran.sylvan.ia>
-Date:   Thu Aug 22 09:51:46 2013 -0400
-
-    Start notes on Mars as a base
 ~~~
 
 To recap, when we want to add changes to our repository,
@@ -416,35 +315,31 @@ repository (`git commit`):
 >
 > Which command(s) below would save the changes of `myfile.txt` to my local Git repository?
 >
-> 1. 
+> 1.
 >
 >     ~~~
 >     $ git commit -m "my recent changes"
 >     ~~~
-> 2. 
+> 2.
 >
 >     ~~~
 >     $ git init myfile.txt
 >     $ git commit -m "my recent changes"
 >     ~~~
-> 3. 
+> 3.
 >
 >     ~~~
 >     $ git add myfile.txt
 >     $ git commit -m "my recent changes"
 >     ~~~
-> 4. 
+> 4.
 >
 >     ~~~
 >     $ git commit -m myfile.txt "my recent changes"
 >     ~~~
 
-> ## `bio` Repository {.challenge}
+> ## `Writing your own commits` {.challenge}
 >
-> Create a new Git repository on your computer called `bio`.
-> Write a three-line biography for yourself in a file called `me.txt`,
-> commit your changes,
-> then modify one line, add a fourth line, and display the differences
-> between its updated state and its original state.
+> Add an extra line to the mars.txt file, and commit it to the repository.
 
 [commit-messages]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html

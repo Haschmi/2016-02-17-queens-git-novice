@@ -10,6 +10,31 @@ minutes: 25
 > *   Compare various versions of tracked files.
 > *   Restore old versions of files.
 
+To look at the history of what we've done so far:
+
+~~~ {.bash}
+$ git log
+~~~
+~~~ {.output}
+commit 005937fbe2a98fb83f0ade869025dc2636b4dad5
+Author: Vlad Dracula <vlad@tran.sylvan.ia>
+Date:   Thu Aug 22 10:14:07 2013 -0400
+
+    Discuss concerns about Mars' climate for Mummy
+
+commit 34961b159c27df3b475cfe4415d94a6d1fcd064d
+Author: Vlad Dracula <vlad@tran.sylvan.ia>
+Date:   Thu Aug 22 10:07:21 2013 -0400
+
+    Add concerns about effects of Mars' moons on Wolfman
+
+commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
+Author: Vlad Dracula <vlad@tran.sylvan.ia>
+Date:   Thu Aug 22 09:51:46 2013 -0400
+
+    Start notes on Mars as a base
+~~~
+
 If we want to see what we changed at different steps, we can use `git diff`
 again, but with the notation `HEAD~1`, `HEAD~2`, and so on, to refer to old
 commits:
@@ -199,22 +224,22 @@ moving backward and forward in time becomes much easier.
 > let her recover the last committed version of her Python script called
 > `data_cruncher.py`?
 >
-> 1. 
+> 1.
 >
 >     ~~~
 >     $ git checkout HEAD
 >     ~~~
-> 2. 
+> 2.
 >
 >     ~~~
 >     $ git checkout HEAD data_cruncher.py
 >     ~~~
-> 3. 
+> 3.
 >
 >     ~~~
 >     $ git checkout HEAD~1 data_cruncher.py
 >     ~~~
-> 4. 
+> 4.
 >
 >     ~~~
 >     $ git checkout <unique ID of last commit> data_cruncher.py

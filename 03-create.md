@@ -5,7 +5,7 @@ subtitle: Creating a Repository
 minutes: 10
 ---
 > ## Learning Objectives {.objectives}
-> 
+>
 > *   Create a local Git repository.
 
 Once Git is configured,
@@ -17,7 +17,7 @@ $ mkdir planets
 $ cd planets
 ~~~
 
-Then we tell Git to make `planets` a [repository](reference.html#repository)&mdash;a place where
+Then we tell Git to make `planets-yourName` a [repository](reference.html#repository)&mdash;a place where
 Git can store versions of our files:
 
 ~~~ {.bash}
@@ -41,9 +41,7 @@ $ ls -a
 .	..	.git
 ~~~
 
-Git stores information about the project in this special sub-directory.
-If we ever delete it,
-we will lose the project's history.
+Git stores information about the project in this special sub-directory. If we ever delete it, we will lose the project's history. This is a useful thing to remember- if we mess up with `git init`, we can actually delete anything related to the repository and give ourselves a clean slate, simply by deleting the `.git` folder.
 
 We can check that everything is set up correctly
 by asking Git to tell us the status of our project:
@@ -64,7 +62,7 @@ nothing to commit (create/copy files and use "git add" to track)
 > Dracula starts a new project, `moons`, related to his `planets` project.
 > Despite Wolfman's concerns, he enters the following sequence of commands to
 > create one Git repository inside another:
-> 
+>
 > ~~~ {.bash}
 > cd             # return to home directory
 > mkdir planets  # make a new directory planets
@@ -74,6 +72,6 @@ nothing to commit (create/copy files and use "git add" to track)
 > cd moons       # go into planets/moons
 > git init       # make the moons sub-directory a Git repository
 > ~~~
-> 
+>
 > Why is it a bad idea to do this?
 > How can Dracula "undo" his last `git init`?
