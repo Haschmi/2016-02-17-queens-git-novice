@@ -132,3 +132,36 @@ Date:   Tue Feb 9 09:08:42 2016 -0500
 
     this should be the pull request where you added in their changes
 ```
+
+To summarize, our two repositories now look like this:
+
+```
+fork --- added saturn (partner)
+                \
+                 added jupiter (us)
+```
+
+> ## Updating your copy of an upstream repository {.challenge}
+>
+> What do you think is the appropriate command to update our copy of our partner's repository?
+>
+> 1.
+>
+>     ~~~
+>     $ git fetch upstream/master
+>     ~~~
+> 2.
+>
+>     ~~~
+>     $ git pull origin master
+>     ~~~
+> 3.
+>
+>     ~~~
+>     $ git pull upstream master
+>     ~~~
+> 4.
+>
+>     ~~~
+>     $ git fetch origin/master
+>     ~~~
