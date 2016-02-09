@@ -66,4 +66,18 @@ fork --- added saturn (partner)
                  added jupiter (us)
 ```
 
-We 
+Let's see if we can accomplish this. The first step is for us to retrieve the base (upstream) repository that we forked from.
+
+```{.bash}
+# add a new remote repository
+git remote add upstream https://github.com/partner/planets-partnersName.git
+# fetch the contents of that remote repository
+git fetch upstream
+```
+
+Now we will check to make sure we are on our master branch and rebase our project onto what we just downloaded.
+
+```{.bash}
+git checkout master # not strictly necessary
+git rebase upstream/master
+```
