@@ -27,6 +27,7 @@ fork --- A --- B --- C (Ted)
                        D --- E --- F (Angela)
 ```
 
+
 The second scenario (what we want) is much nicer, as Angela is now in a position to send a pull request to Ted. We have the most up-to-date version of the code will *all* changes, so we can make sure they play nice with each other. Let's try doing this for real with your partner's repository.
 
 Let's clone our forked copy of your partner's planets repository from GitHub, and make a file called `jupiter.txt`. Add whatever you want to it, then commit it.
@@ -40,6 +41,7 @@ git commit -m 'added jupiter'
 # you can push it if you want to, but it doesn't matter for this example
 ```
 
+
 Now let's give our partner some changes they have to deal with. In your copy of `planets` (`planets-yourName`), make a file called `saturn.txt`, and add whatever you want to it. Commit that too, then push it to GitHub.
 
 ```{.bash}
@@ -49,6 +51,7 @@ git add .
 git commit -m 'added saturn'
 git push origin master
 ```
+
 
 `cd` back to your fork of your partner's project. So right now, this is the current situation:
 
@@ -66,6 +69,7 @@ fork --- added saturn (partner)
                  added jupiter (us)
 ```
 
+
 Let's see if we can accomplish this. The first step is for us to retrieve the base (upstream) repository that we forked from.
 
 ```{.bash}
@@ -74,6 +78,7 @@ git remote add upstream https://github.com/partner/planets-partnersName.git
 # fetch the contents of that remote repository
 git pull upstream master
 ```
+
 
 Now we will check to make sure we are on our master branch and rebase our project onto what we just downloaded.
 
@@ -89,6 +94,7 @@ pluto.txt
 jupiter.txt
 saturn.txt
 ```
+
 
 Success, our repository now has both sets of changes. Unfortunately, GitHub now thinks our project has diverged from the online repository if we run `git status`.
 
@@ -107,6 +113,7 @@ This is perhaps the one time we are going to ignore Git's advice. We will forcib
 ```{.bash}
 git push -f origin master
 ```
+
 
 Congratulations, we have successfully updated our forked repository! If we run `git log`, we can now see that our changes have been put on "top" of our partners'.
 
@@ -135,6 +142,7 @@ Date:   Tue Feb 9 09:08:42 2016 -0500
 [earlier stuff]
 ```
 
+
 To summarize, our two repositories now look like this:
 
 ```
@@ -143,6 +151,11 @@ fork --- added saturn (partner)
                  added jupiter (us)
 ```
 
+
+> ## Collaborating on a forked repository {.challenge}
+>
+> During this lesson, we put ourselves in a position to contribute to your partner's repository via pull request. Submit a pull request with our rebased changes now so they have both `saturn.txt` and `jupiter.txt`.
+
 > ## Updating your copy of an upstream repository {.challenge}
 >
-> What do you think is the appropriate command to update our copy of our partner's repository?
+> Pretend that your partner updated their repository with some new changes. What do you think is the appropriate command to update our copy of our partner's repository?
