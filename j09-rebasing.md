@@ -131,6 +131,8 @@ Author: Your name <your email>
 Date:   Tue Feb 9 09:08:42 2016 -0500
 
     this should be the pull request where you added in their changes
+
+[earlier stuff]
 ```
 
 To summarize, our two repositories now look like this:
